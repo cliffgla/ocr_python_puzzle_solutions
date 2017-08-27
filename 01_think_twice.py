@@ -4,6 +4,8 @@ english_alphabet = [
 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
+
+code = {}
 # german_alphabet
 #
 alphabet = english_alphabet
@@ -16,4 +18,8 @@ for i in range(list_length):
     # if the new_index position is bigger than the list lenth, wraps to beging of index (e.g. y->a)
     if new_index > (list_length-1):
         new_index = new_index - list_length
-    print(i, new_index)
+    #print(alphabet[i], "-->", alphabet[new_index])
+    # add new key-value pair to code dictionary
+    code[alphabet[i]] = alphabet[new_index]
+
+print(code)
