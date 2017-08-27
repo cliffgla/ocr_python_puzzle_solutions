@@ -5,6 +5,9 @@ english_alphabet = [
 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
 
+coded_message = "g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
+
+decoded = " "
 code = {}
 # german_alphabet
 #
@@ -22,4 +25,11 @@ for i in range(list_length):
     # add new key-value pair to code dictionary
     code[alphabet[i]] = alphabet[new_index]
 
-print(code)
+#print(code)
+
+for letter in coded_message:
+    if letter in alphabet:
+        decoded += (code[letter])
+    else:
+        decoded += letter
+print(decoded)
