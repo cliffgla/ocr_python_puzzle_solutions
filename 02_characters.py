@@ -1,3 +1,5 @@
+import collections
+
 char = """
     %%$@_$^__#)^)&!_+]!*@&^}@[@%]()%+$&[(_@%+%$*^@$^!+]!&_#)_*}{}}!}_]$[%}@[{_@#_^{*
 @##&{#&{&)*%(]{{([*}@[@&]+!!*{)!}{%+{))])[!^})+)$]#{*+^((@^@}$[**$&^{$!@#$%)!@(&
@@ -1221,9 +1223,12 @@ $#_}*!(+([_&%{^&[([%]}*^{{([@+@]@*&@_!]_+([(#&!]]#$$#]@#{_]][_{@]{*))$({%}_![@$]
 #@}&$[[%]_&$+)$!%{(}$^$}*
 """
 
-my_list = char.split()
+string_count = collections.Counter(char)
 
-#for i in char:
-    #my_list.append(i)
+new_message = ""
 
-print(my_list)
+for i in string_count:
+    if string_count[i] < 2:
+        new_message += str(i)
+
+print(new_message)
