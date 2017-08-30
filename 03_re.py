@@ -1,3 +1,5 @@
+import re
+
 message = """
 kAewtloYgcFQaJNhHVGxXDiQmzjfcpYbzxlWrVcqsmUbCunkfxZWDZjUZMiGqhRRiUvGmYmvnJIHEmbT
 MUKLECKdCthezSYBpIElRnZugFAxDRtQPpyeCBgBfaRVvvguRXLvkAdLOeCKxsDUvBBCwdpMMWmuELeG
@@ -1238,6 +1240,7 @@ BGRdjBsnBnOYLIQXIeTfmwUxtADmBkhDXEZqGsBGOwMQqyLHOObREqMGkSeHepgonKmvKggqnntwXlxW
 juNjEvszhIaFFlEHHgiLrYDAsrfdvHuyXyEgvLYCEmVLnmjlUxrWvcIdFkkJjaaNZqePUSEHhecBbHRN
 VLquogLIjUrjRgsXGywAquhfRjUMvmIEDSOXFkupsQARTCqbVjFbKicfFTtVKxbqfSbLlybPvcUSasUP
 mkPytpvUSvuPtLFmkeKQIWNaJouCnyPyiaRBSYuvMtBXylHWIKkexawFeNwjIpTJBImSUXAAipljptIj
+wgDEIuvHFxRfQhtqLKnJfONtkcnDORkZqbtPplsjjTEIsquhSsQTwNZuPVxaTqDvwMONBfCsNJuJpJHZ
 MoxFBReUIhcyLaoBVPIZSWfJDMJMwEWaZbjFpgUpXQYtmwDUeUdUruxpUcCGdnlpkCXZlEETSCPauRwg
 YYCcnRpqBUyMnvWUNyoXhKqwZsrTLteXQVxOSztAxqBwEsKPLLYmXPdkOoUfuEcJYdIfxQXgalSKJfEt
 TOKazgVKoiUsuemONwHeyCVCuUBkbAMifDjSeyplNXUSPpvzJCFZmLTJQGPRVuSVtZUujsLwtqcGoEka
@@ -1245,15 +1248,14 @@ UExetgcupdJsrsbhTYULkVBMCPZIEHlLwarcxqTdcfkAmODkhTJZHjKoyGPfpYsHPqHtLOTWGMixunvq
 WXxZueyZjieriCSWGRUwIYKmJFjrvkBReOMmvnkprYWTLWNTvzIHtzEtkIzPRGMPidFbewZnqlhYFeYE
 fpszkxkhRfwiYEXyERfYBMEJFDHThpvtwBQnemRsLmZVPkitRtMYNsFbZonBvtopMftpspksjzeqdxAL
 tWsLrtDqToVGVOQAOvyIdhWOeHKcykQJxjgqlmGKMiKnmUTJrgDRXaroZEQnyXSoGVDmUUXDiclJejRR
-wgDEIuvHFxRfQhtqLKnJfONtkcnDORkZqbtPplsjjTEIsquhSsQTwNZuPVxaTqDvwMONBfCsNJuJpJHZ
 dCdFLtBQPtFQuCdKOrpndJNUFQIDSbetUKylhSUjcDVtbiQrWMRQhAwGUZyPneCGUjGBBTkLqxLAXXtB
 KfErkDaWMFZZeuqDmXKJEGHyToPUhPphfVhgUZgbIuRAtWnroImpJKqqmEZqeNQCKzhjIkKQHURWLXFw
 PBuijeoTSpsVLaOGuLVjMZXkBvVXwUuHfBihziiavGSYofPNeKsTXruMUumRRPQJzvSzJkKbtSipiqBd
 """
 
-new_message = ""
+#new_message_list = message[3::3]
 
-for letter in message:
-    if letter.islower():
-        new_message += letter
-print(new_message)
+search_string = re.findall(r"[^A-Z]+[A-Z]{3}([a-z])[A-Z]{3}[^A-Z]+", message)
+
+
+print(search_string)
